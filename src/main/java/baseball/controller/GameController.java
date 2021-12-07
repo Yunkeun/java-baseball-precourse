@@ -1,73 +1,33 @@
 package baseball.controller;
 
-import baseball.generator.HintGenerator;
-import baseball.generator.RandomNumberGenerator;
-import baseball.handler.InputExceptionHandler;
-import baseball.handler.TerminateHandler;
+import utils.HintGenerator;
+import utils.TerminateUtil;
+import baseball.models.AnswerNumber;
+import baseball.models.PlayerNumber;
 import baseball.view.InputView;
 import baseball.view.OutputView;
-import java.util.ArrayList;
 
-/**
- * 숫자 야구 게임 진행을 제어하는 클래스
- */
 public class GameController {
 
-	private static final int NUMBER_SIZE = 3;
-	private static ArrayList<Integer> ANSWER_NUMBER = new ArrayList<>(NUMBER_SIZE);
-	private static ArrayList<Integer> PLAYER_NUMBER = new ArrayList<>(NUMBER_SIZE);
+	private GameController() {
+	}
 
-	/**
-	 * 게임을 제어하는 함수
-	 */
 	public static void controlGame() {
-		RandomNumberGenerator.initProgramNumber(ANSWER_NUMBER);
+		AnswerNumber answerNumber = new AnswerNumber();
+		System.out.println(answerNumber.getAnswerNumber());
 		while (true) {
-			startGame();
-			giveHint(ANSWER_NUMBER, PLAYER_NUMBER);
-			if (TerminateHandler.correctAnswer(ANSWER_NUMBER, PLAYER_NUMBER)) {
-				TerminateHandler.finishGame();
+			PlayerNumber playerNumber = getPlayerNumber();
+			HintGenerator.giveHint(answerNumber, playerNumber);
+			if (TerminateUtil.correctAnswer(answerNumber, playerNumber)) {
+				TerminateUtil.finishGame();
 				break;
 			}
 		}
 	}
 
-	/**
-	 * 게임을 시작하는 함수
-	 */
-	public static void startGame() {
-		ANSWER_NUMBER = RandomNumberGenerator.generateRandomNumber();
+	private static PlayerNumber getPlayerNumber() {
 		OutputView.askNumber();
-		String inputNumber = InputView.writeInputNumber();
-		InputExceptionHandler.validatePlayerNumber(inputNumber);
-		PLAYER_NUMBER = convertStringToArray(inputNumber);
-	}
-
-	/**
-	 * 유저에게 힌트를 제공하는 함수
-	 *
-	 * @param answerNumber: ArrayList<Integer>
-	 * @param playerNumber: ArrayList<Integer>
-	 */
-	public static void giveHint(ArrayList<Integer> answerNumber, ArrayList<Integer> playerNumber) {
-		int ballCount = HintGenerator.countBall(answerNumber, playerNumber);
-		int strikeCount = HintGenerator.countStrike(answerNumber, playerNumber);
-
-		HintGenerator.controlHint(ballCount, strikeCount);
-	}
-
-	/**
-	 * String 타입을 ArrayList<Integer> 타입으로 변환하는 함수
-	 *
-	 * @param str: String
-	 * @return arr
-	 */
-	public static ArrayList<Integer> convertStringToArray(String str) {
-		ArrayList<Integer> arr = new ArrayList<>(str.length());
-
-		while (arr.size() != str.length()) {
-			arr.add(Integer.parseInt(str.split("")[arr.size()]));
-		}
-		return arr;
+		String inputNumber = InputView.getInputNumber();
+		return new PlayerNumber(inputNumber);
 	}
 }

@@ -1,12 +1,12 @@
-package baseball.handler;
+package utils;
 
 import java.util.Arrays;
 import java.util.Objects;
 
-/**
- * 유저의 입력에 대한 예외를 처리하는 클래스
- */
-public class InputExceptionHandler {
+public class ExceptionUtil {
+
+	private ExceptionUtil() {
+	}
 
 	private static final int MINIMUM_INDEX = 0;
 	private static final int MAXIMUM_INDEX = 2;
@@ -17,13 +17,9 @@ public class InputExceptionHandler {
 	private static final String INVALID_RANGE_MESSAGE = "잘못된 범위의 문자가 입력되었습니다.";
 	private static final String INVALID_DUPLICATE_MESSAGE = "중복된 숫자가 입력되었습니다.";
 	private static final String INVALID_NUMBER_MESSAGE = "1 또는 2만 입력해주세요.";
+	private static final String REPLAY_NUMBER = "1";
+	private static final String TERMINATE_NUMBER = "2";
 
-
-	/**
-	 * playerNumber에 대한 비정상적인 입력이라면 예외처리를 하는 함수
-	 *
-	 * @param playerNumber: String
-	 */
 	public static void validatePlayerNumber(String playerNumber) {
 
 		if (!checkLength(playerNumber, VALID_NUMBER_LENGTH)) {
@@ -37,36 +33,16 @@ public class InputExceptionHandler {
 		}
 	}
 
-	/**
-	 * 게임 재시작을 위한 번호 입력에 대한 예외처리를 하는 함수
-	 *
-	 * @param number: String
-	 */
 	public static void validateReplay(String number) {
-		if (!(Objects.equals(number, "1") || Objects.equals(number, "2"))) {
+		if (!(Objects.equals(number, REPLAY_NUMBER) || Objects.equals(number, TERMINATE_NUMBER))) {
 			throw new IllegalArgumentException(INVALID_NUMBER_MESSAGE);
 		}
 	}
 
-	/**
-	 * 입력된 숫자가 3자리인지 확인하는 함수
-	 *
-	 * @param playerNumber: String
-	 * @param validLength:  int
-	 * @return true or false
-	 */
 	public static boolean checkLength(String playerNumber, int validLength) {
 		return (playerNumber.length() == validLength);
 	}
 
-	/**
-	 * 입력된 숫자가 1~9 사이의 값인지 확인하는 함수
-	 *
-	 * @param playerNumber: String
-	 * @param minimumRange: int
-	 * @param maximumRange: int
-	 * @return true or false
-	 */
 	public static boolean checkRange(String playerNumber, int minimumRange, int maximumRange) {
 		char[] playerArray = playerNumber.toCharArray();
 		for (int i = MINIMUM_INDEX; i <= MAXIMUM_INDEX; i++) {
@@ -77,12 +53,6 @@ public class InputExceptionHandler {
 		return true;
 	}
 
-	/**
-	 * 입력된 숫자의 중복을 확인하는 함수
-	 *
-	 * @param playerNumber: String
-	 * @return true or false
-	 */
 	public static boolean checkDuplicate(String playerNumber) {
 		return (Arrays.stream(playerNumber.split("")).distinct().count() == playerNumber.length());
 	}

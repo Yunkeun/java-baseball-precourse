@@ -7,24 +7,17 @@ import camp.nextstep.edu.missionutils.Console;
  */
 public class InputView {
 
-	/**
-	 * 유저가 숫자를 입력하는 함수
-	 *
-	 * @return playerNum
-	 */
-	public static String writeInputNumber() {
+	private InputView() {
+	}
+
+	public static String getInputNumber() {
 		String playerNum;
 
 		playerNum = Console.readLine();
 		return playerNum;
 	}
 
-	/**
-	 * 유저가 게임 재시작을 할지 말지 입력하는 함수
-	 *
-	 * @return number
-	 */
-	public static String writeReplayOrNot() {
+	public static String getReplayOrNot() {
 		String number;
 
 		number = Console.readLine();
