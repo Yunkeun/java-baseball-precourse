@@ -1,4 +1,4 @@
-package utils;
+package baseball.utils;
 
 import baseball.models.AnswerNumber;
 import baseball.models.Hint;

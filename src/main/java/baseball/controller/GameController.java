@@ -1,7 +1,7 @@
 package baseball.controller;
 
-import utils.HintGenerator;
-import utils.TerminateUtil;
+import baseball.utils.HintGenerator;
+import baseball.utils.TerminateUtil;
 import baseball.models.AnswerNumber;
 import baseball.models.PlayerNumber;
 import baseball.view.InputView;

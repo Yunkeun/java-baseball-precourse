@@ -1,6 +1,6 @@
 package baseball.models;
 
-import utils.ExceptionUtil;
+import baseball.utils.ExceptionUtil;
 import java.util.ArrayList;
 import java.util.List;
 

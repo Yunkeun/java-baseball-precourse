@@ -1,4 +1,4 @@
-package utils;
+package baseball.utils;
 
 import baseball.controller.GameController;
 import baseball.models.AnswerNumber;
