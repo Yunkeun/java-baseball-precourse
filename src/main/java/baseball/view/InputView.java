@@ -8,6 +8,7 @@ public class InputView {
 	}
 
 	public static String getInputNumber() {
+		OutputView.askNumber();
 		return Console.readLine();
 	}
 

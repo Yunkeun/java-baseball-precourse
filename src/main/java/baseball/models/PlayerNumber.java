@@ -1,17 +1,13 @@
 package baseball.models;
 
-import baseball.utils.ExceptionUtil;
-import java.util.ArrayList;
 import java.util.List;
 
 public class PlayerNumber {
 
-	private List<Integer> playerNumber;
+	private final List<Integer> playerNumber;
 
-	public PlayerNumber(String inputNumber) {
-		playerNumber = new ArrayList<>();
-		ExceptionUtil.validatePlayerNumber(inputNumber);
-		this.playerNumber = getPlayerNumber(inputNumber);
+	public PlayerNumber(List<Integer> inputNumber) {
+		this.playerNumber = inputNumber;
 	}
 
 	public List<Integer> getPlayerNumber() {
@@ -20,12 +16,5 @@ public class PlayerNumber {
 
 	public int getOneNumber(int index) {
 		return playerNumber.get(index);
-	}
-
-	private List<Integer> getPlayerNumber(String inputNumber) {
-		while (playerNumber.size() != inputNumber.length()) {
-			playerNumber.add(Integer.parseInt(inputNumber.split("")[playerNumber.size()]));
-		}
-		return playerNumber;
 	}
 }
