@@ -15,7 +15,6 @@ public class GameController {
 
 	public static void controlGame() {
 		AnswerNumber answerNumber = AnswerNumberFactory.createRandomNumber();
-		System.out.println(answerNumber.getAnswerNumber());
 		while (true) {
 			PlayerNumber playerNumber = PlayerNumberFactory.createPlayerNumber(InputView.getInputNumber());
 			HintFactory.makeHint(answerNumber, playerNumber);
