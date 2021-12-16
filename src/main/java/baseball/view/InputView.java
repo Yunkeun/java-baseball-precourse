@@ -1,5 +1,6 @@
 package baseball.view;
 
+import baseball.utils.ExceptionUtil;
 import camp.nextstep.edu.missionutils.Console;
 
 public class InputView {
@@ -9,10 +10,14 @@ public class InputView {
 
 	public static String getInputNumber() {
 		OutputView.askNumber();
-		return Console.readLine();
+		String playerNumber = Console.readLine();
+		ExceptionUtil.validatePlayerNumber(playerNumber);
+		return playerNumber;
 	}
 
 	public static String getReplayOrNot() {
-		return Console.readLine();
+		String number = Console.readLine();
+		ExceptionUtil.validateReplay(number);
+		return number;
 	}
 }

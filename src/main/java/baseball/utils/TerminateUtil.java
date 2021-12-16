@@ -19,9 +19,7 @@ public class TerminateUtil {
 	}
 
 	public static boolean decideReplay() {
-		String number = InputView.getReplayOrNot();
-		ExceptionUtil.validateReplay(number);
-		return (Objects.equals(number, REPLAY_NUMBER));
+		return Objects.equals(InputView.getReplayOrNot(), REPLAY_NUMBER);
 	}
 
 	public static void finishGame() {
