@@ -5,9 +5,9 @@ import baseball.models.Hint;
 import baseball.models.PlayerNumber;
 import baseball.view.OutputView;
 
-public class HintGenerator {
+public class HintFactory {
 
-	private HintGenerator() {
+	private HintFactory() {
 	}
 
 	private static final int INITIAL_VALUE = 0;

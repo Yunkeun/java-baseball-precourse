@@ -1,6 +1,6 @@
 package baseball.controller;
 
-import baseball.utils.HintGenerator;
+import baseball.utils.HintFactory;
 import baseball.utils.TerminateUtil;
 import baseball.models.AnswerNumber;
 import baseball.models.PlayerNumber;
@@ -17,7 +17,7 @@ public class GameController {
 		System.out.println(answerNumber.getAnswerNumber());
 		while (true) {
 			PlayerNumber playerNumber = getPlayerNumber();
-			HintGenerator.giveHint(answerNumber, playerNumber);
+			HintFactory.giveHint(answerNumber, playerNumber);
 			if (TerminateUtil.correctAnswer(answerNumber, playerNumber)) {
 				TerminateUtil.finishGame();
 				break;
