@@ -11,16 +11,10 @@ public class InputView {
 	}
 
 	public static String getInputNumber() {
-		String playerNum;
-
-		playerNum = Console.readLine();
-		return playerNum;
+		return Console.readLine();
 	}
 
 	public static String getReplayOrNot() {
-		String number;
-
-		number = Console.readLine();
-		return number;
+		return Console.readLine();
 	}
 }

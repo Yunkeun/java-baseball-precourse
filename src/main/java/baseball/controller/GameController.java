@@ -27,7 +27,6 @@ public class GameController {
 
 	private static PlayerNumber getPlayerNumber() {
 		OutputView.askNumber();
-		String inputNumber = InputView.getInputNumber();
-		return new PlayerNumber(inputNumber);
+		return new PlayerNumber(InputView.getInputNumber());
 	}
 }
