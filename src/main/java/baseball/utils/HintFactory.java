@@ -12,7 +12,7 @@ public class HintFactory {
 
 	private static final int INITIAL_VALUE = 0;
 
-	public static void giveHint(AnswerNumber answerNumber, PlayerNumber playerNumber) {
+	public static void makeHint(AnswerNumber answerNumber, PlayerNumber playerNumber) {
 		Hint hint = new Hint(INITIAL_VALUE, INITIAL_VALUE);
 		hint.countStrike(answerNumber, playerNumber);
 		hint.countBall(answerNumber, playerNumber);

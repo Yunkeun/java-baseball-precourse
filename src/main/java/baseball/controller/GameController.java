@@ -18,7 +18,7 @@ public class GameController {
 		System.out.println(answerNumber.getAnswerNumber());
 		while (true) {
 			PlayerNumber playerNumber = PlayerNumberFactory.createPlayerNumber(InputView.getInputNumber());
-			HintFactory.giveHint(answerNumber, playerNumber);
+			HintFactory.makeHint(answerNumber, playerNumber);
 			if (TerminateUtil.correctAnswer(answerNumber, playerNumber)) {
 				TerminateUtil.finishGame();
 				break;
