@@ -1,5 +1,6 @@
 package baseball.controller;
 
+import baseball.utils.AnswerNumberFactory;
 import baseball.utils.HintFactory;
 import baseball.utils.PlayerNumberFactory;
 import baseball.utils.TerminateUtil;
@@ -13,7 +14,7 @@ public class GameController {
 	}
 
 	public static void controlGame() {
-		AnswerNumber answerNumber = new AnswerNumber();
+		AnswerNumber answerNumber = AnswerNumberFactory.createRandomNumber();
 		System.out.println(answerNumber.getAnswerNumber());
 		while (true) {
 			PlayerNumber playerNumber = PlayerNumberFactory.createPlayerNumber(InputView.getInputNumber());
