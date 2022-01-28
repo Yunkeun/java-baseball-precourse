@@ -1,21 +1,23 @@
 package baseball.number;
 
+import baseball.hint.HintService;
+
 public class NumberServiceImpl implements NumberService {
 
-	private final Number playerNumber;
-	private final Number randomNumber;
+	private final HintService hintService;
 
-	public NumberServiceImpl(Number playerNumber, Number randomNumber) {
-		this.playerNumber = playerNumber;
-		this.randomNumber = randomNumber;
+	public NumberServiceImpl(HintService hintService) {
+		this.hintService = hintService;
 	}
 
 	@Override
-	public void compareNumbers() {
-		if (playerNumber == randomNumber) {
-			//askRetry();
+	public void compareNumbers(PlayerNumber playerNumber, RandomNumber randomNumber) {
+		if (playerNumber.getPlayerNumber() == randomNumber.getRandomNumber()) {
+			System.out.println("playerNumber = " + playerNumber.getPlayerNumber());
+			System.out.println("randomNumber = " + randomNumber.getRandomNumber());
+			System.out.println("정답입니다.");
 			return;
 		}
-		//getHint();
+		hintService.giveHint();
 	}
 }
