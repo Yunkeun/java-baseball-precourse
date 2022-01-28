@@ -2,7 +2,7 @@ package baseball.number;
 
 import java.util.ArrayList;
 
-public interface NumberGenerator {
+public interface Number {
 
 	ArrayList<Integer> generateNumber();
 }
