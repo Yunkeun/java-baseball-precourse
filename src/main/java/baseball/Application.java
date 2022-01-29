@@ -1,12 +1,12 @@
 package baseball;
 
-import baseball.hint.HintService;
-import baseball.hint.HintServiceImpl;
-import baseball.number.Generator;
-import baseball.number.NumberService;
-import baseball.number.NumberServiceImpl;
-import baseball.number.PlayerNumber;
-import baseball.number.RandomNumber;
+import baseball.model.hint.HintService;
+import baseball.model.hint.HintServiceImpl;
+import baseball.model.number.Generator;
+import baseball.model.number.NumberService;
+import baseball.model.number.NumberServiceImpl;
+import baseball.model.number.PlayerNumber;
+import baseball.model.number.RandomNumber;
 
 public class Application {
     public static void main(String[] args) {
