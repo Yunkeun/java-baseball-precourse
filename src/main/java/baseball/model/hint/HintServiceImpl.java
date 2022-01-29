@@ -1,7 +1,7 @@
-package baseball.hint;
+package baseball.model.hint;
 
-import baseball.number.PlayerNumber;
-import baseball.number.RandomNumber;
+import baseball.model.number.PlayerNumber;
+import baseball.model.number.RandomNumber;
 import baseball.view.OutputView;
 
 public class HintServiceImpl implements HintService {

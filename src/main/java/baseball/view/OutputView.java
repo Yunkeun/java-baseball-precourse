@@ -1,6 +1,6 @@
 package baseball.view;
 
-import baseball.hint.HintType;
+import baseball.model.hint.HintType;
 
 public class OutputView {
 

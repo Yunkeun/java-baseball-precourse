@@ -1,6 +1,6 @@
-package baseball.number;
+package baseball.model.number;
 
-import baseball.hint.HintService;
+import baseball.model.hint.HintService;
 
 public class NumberServiceImpl implements NumberService {
 

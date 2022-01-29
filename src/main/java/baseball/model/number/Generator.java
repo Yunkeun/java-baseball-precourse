@@ -1,4 +1,4 @@
-package baseball.number;
+package baseball.model.number;
 
 import baseball.view.InputView;
 import camp.nextstep.edu.missionutils.Randoms;

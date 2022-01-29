@@ -1,6 +1,4 @@
-package baseball.number;
-
-import java.util.ArrayList;
+package baseball.model.number;
 
 public interface NumberService {
 

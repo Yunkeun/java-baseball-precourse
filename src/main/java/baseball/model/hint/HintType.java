@@ -1,4 +1,4 @@
-package baseball.hint;
+package baseball.model.hint;
 
 public enum HintType {
 	볼,
