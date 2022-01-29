@@ -11,13 +11,12 @@ public class NumberServiceImpl implements NumberService {
 	}
 
 	@Override
-	public void compareNumbers(PlayerNumber playerNumber, RandomNumber randomNumber) {
-		if (playerNumber.getPlayerNumber() == randomNumber.getRandomNumber()) {
-			System.out.println("playerNumber = " + playerNumber.getPlayerNumber());
-			System.out.println("randomNumber = " + randomNumber.getRandomNumber());
+	public boolean compareNumbers(PlayerNumber playerNumber, RandomNumber randomNumber) {
+		if (playerNumber.getPlayerNumber().equals(randomNumber.getRandomNumber())) {
 			System.out.println("정답입니다.");
-			return;
+			return true;
 		}
 		hintService.giveHint();
+		return false;
 	}
 }

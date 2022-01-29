@@ -11,6 +11,11 @@ public class InputView {
 	private InputView() {
 	}
 
+	public static int inputRetry() {
+		String inputNumber = Console.readLine();
+		return Integer.parseInt(inputNumber);
+	}
+
 	public static List<String> inputPlayerNumber() {
 		String inputNumber = Console.readLine();
 		return Arrays.asList(inputNumber.split(regex));
