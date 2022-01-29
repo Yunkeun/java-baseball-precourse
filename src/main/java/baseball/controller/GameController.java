@@ -14,6 +14,7 @@ public class GameController {
 
 	public void controlGame() {
 		RandomNumber randomNumber = Generator.generateRandomNumber();
+		System.out.println(randomNumber.getRandomNumber());
 		while (true) {
 			PlayerNumber playerNumber = Generator.generatePlayerNumber();
 			HintService hintService = new HintServiceImpl(playerNumber, randomNumber);

@@ -9,6 +9,10 @@ public class OutputView {
 	private OutputView() {
 	}
 
+	public static void printException() {
+		throw new IllegalArgumentException();
+	}
+
 	public static void printRetry() {
 		System.out.println(ASK_RETRY);
 	}

@@ -13,11 +13,21 @@ public class InputView {
 
 	public static int inputRetry() {
 		String inputNumber = Console.readLine();
-		return Integer.parseInt(inputNumber);
+		int number = Integer.parseInt(inputNumber);
+		if (!(number == 1 || number == 2)) {
+			OutputView.printException();
+		}
+		return number;
 	}
 
 	public static List<String> inputPlayerNumber() {
 		String inputNumber = Console.readLine();
-		return Arrays.asList(inputNumber.split(regex));
+		List<String> playerNumber = Arrays.asList(inputNumber.split(regex));
+		if (playerNumber.get(0).equals(playerNumber.get(1))
+			|| playerNumber.get(1).equals(playerNumber.get(2))
+			|| playerNumber.get(0).equals(playerNumber.get(2))) {
+			OutputView.printException();
+		}
+		return playerNumber;
 	}
 }
