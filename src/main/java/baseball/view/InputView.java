@@ -6,7 +6,9 @@ import java.util.List;
 
 public class InputView {
 
-	private static final String regex = "";
+	private static final String REGEX = "";
+	private static final int RESTART = 1;
+	private static final int END = 2;
 
 	private InputView() {
 	}
@@ -14,7 +16,7 @@ public class InputView {
 	public static int inputRetry() {
 		String inputNumber = Console.readLine();
 		int number = Integer.parseInt(inputNumber);
-		if (!(number == 1 || number == 2)) {
+		if (!(number == RESTART || number == END)) {
 			OutputView.printException();
 		}
 		return number;
@@ -22,7 +24,7 @@ public class InputView {
 
 	public static List<String> inputPlayerNumber() {
 		String inputNumber = Console.readLine();
-		List<String> playerNumber = Arrays.asList(inputNumber.split(regex));
+		List<String> playerNumber = Arrays.asList(inputNumber.split(REGEX));
 		if (playerNumber.get(0).equals(playerNumber.get(1))
 			|| playerNumber.get(1).equals(playerNumber.get(2))
 			|| playerNumber.get(0).equals(playerNumber.get(2))) {
