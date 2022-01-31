@@ -1,6 +1,7 @@
 package baseball.model.number;
 
 import baseball.view.InputView;
+import baseball.view.OutputView;
 import camp.nextstep.edu.missionutils.Randoms;
 import java.util.ArrayList;
 import java.util.List;
@@ -18,6 +19,9 @@ public class Generator {
 	public static PlayerNumber generatePlayerNumber() {
 		numbers = new ArrayList<>();
 		List<String> inputNumbers = InputView.inputPlayerNumber();
+		if (inputNumbers.size() != 3) {
+			OutputView.printException();
+		}
 		for (String number : inputNumbers) {
 			numbers.add(Integer.parseInt(number));
 		}

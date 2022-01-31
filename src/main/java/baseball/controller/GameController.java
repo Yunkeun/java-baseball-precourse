@@ -12,21 +12,36 @@ import baseball.view.OutputView;
 
 public class GameController {
 
+	private RandomNumber randomNumber;
+	private PlayerNumber playerNumber;
+
 	public void controlGame() {
-		RandomNumber randomNumber = Generator.generateRandomNumber();
-		System.out.println(randomNumber.getRandomNumber());
+		randomNumber = Generator.generateRandomNumber();
 		while (true) {
-			PlayerNumber playerNumber = Generator.generatePlayerNumber();
+			play();
 			HintService hintService = new HintServiceImpl(playerNumber, randomNumber);
 			NumberService numberService = new NumberServiceImpl(hintService);
-			if (numberService.compareNumbers(playerNumber, randomNumber)) {
-				askRetry();
+			if (validateFinish(numberService)) {
 				return;
 			}
 		}
 	}
 
+	private void play() {
+		OutputView.askPlayerNumber();
+		playerNumber = Generator.generatePlayerNumber();
+	}
+
+	private boolean validateFinish(NumberService numberService) {
+		if (numberService.compareNumbers(playerNumber, randomNumber)) {
+			askRetry();
+			return true;
+		}
+		return false;
+	}
+
 	private void askRetry() {
+		OutputView.printFinish();
 		OutputView.printRetry();
 		if (InputView.inputRetry() == 1) {
 			controlGame();
