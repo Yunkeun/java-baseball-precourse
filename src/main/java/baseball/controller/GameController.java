@@ -43,7 +43,7 @@ public class GameController {
 	private void askRetry() {
 		OutputView.printFinish();
 		OutputView.printRetry();
-		if (InputView.inputRetry() == 1) {
+		if (InputView.inputRetry() == InputView.RESTART) {
 			controlGame();
 		}
 	}

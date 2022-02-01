@@ -19,7 +19,7 @@ public class Generator {
 	public static PlayerNumber generatePlayerNumber() {
 		numbers = new ArrayList<>();
 		List<String> inputNumbers = InputView.inputPlayerNumber();
-		if (inputNumbers.size() != 3) {
+		if (inputNumbers.size() != NUMBERS_SIZE) {
 			OutputView.printException();
 		}
 		for (String number : inputNumbers) {
