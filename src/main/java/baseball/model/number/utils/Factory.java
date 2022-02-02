@@ -1,22 +1,24 @@
-package baseball.model.number;
+package baseball.model.number.utils;
 
+import baseball.model.number.PlayerNumber;
+import baseball.model.number.RandomNumber;
 import baseball.view.InputView;
 import baseball.view.OutputView;
 import camp.nextstep.edu.missionutils.Randoms;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Generator {
+public class Factory {
 
 	private static ArrayList<Integer> numbers;
 	private static final int MINIMUM_RANGE = 1;
 	private static final int MAXIMUM_RANGE = 9;
 	private static final int NUMBERS_SIZE = 3;
 
-	private Generator() {
+	private Factory() {
 	}
 
-	public static PlayerNumber generatePlayerNumber() {
+	public static PlayerNumber createPlayerNumber() {
 		numbers = new ArrayList<>();
 		List<String> inputNumbers = InputView.inputPlayerNumber();
 		if (inputNumbers.size() != NUMBERS_SIZE) {
@@ -28,7 +30,7 @@ public class Generator {
 		return new PlayerNumber(numbers);
 	}
 
-	public static RandomNumber generateRandomNumber() {
+	public static RandomNumber createRandomNumber() {
 		numbers = new ArrayList<>();
 		while (numbers.size() != NUMBERS_SIZE) {
 			int pickedNumber = pickNumber();

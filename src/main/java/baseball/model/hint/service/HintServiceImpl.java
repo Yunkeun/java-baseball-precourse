@@ -1,4 +1,4 @@
-package baseball.model.hint;
+package baseball.model.hint.service;
 
 import baseball.model.number.PlayerNumber;
 import baseball.model.number.RandomNumber;
@@ -19,6 +19,7 @@ public class HintServiceImpl implements HintService {
 		OutputView.printHint(countBall(), countStrike());
 	}
 
+	// 구현 클래스에서 기능적인 메소드가 있어도 될까?
 	private int countBall() {
 		int count = 0;
 		for (int number : playerNumber.getPlayerNumber()) {
