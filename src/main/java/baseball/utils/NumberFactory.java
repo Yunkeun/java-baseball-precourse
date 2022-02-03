@@ -10,7 +10,7 @@ import java.util.List;
 
 public class NumberFactory {
 
-	private static ArrayList<Integer> numbers;
+	private static List<Integer> numbers;
 	private static final int MINIMUM_RANGE = 1;
 	private static final int MAXIMUM_RANGE = 9;
 	private static final int NUMBERS_SIZE = 3;

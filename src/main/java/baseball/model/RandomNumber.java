@@ -1,16 +1,16 @@
 package baseball.model;
 
-import java.util.ArrayList;
+import java.util.List;
 
 public class RandomNumber {
 
-	private final ArrayList<Integer> randomNumber;
+	private final List<Integer> randomNumber;
 
-	public RandomNumber(ArrayList<Integer> randomNumber) {
+	public RandomNumber(List<Integer> randomNumber) {
 		this.randomNumber = randomNumber;
 	}
 
-	public ArrayList<Integer> getRandomNumber() {
+	public List<Integer> getRandomNumber() {
 		return randomNumber;
 	}
 }

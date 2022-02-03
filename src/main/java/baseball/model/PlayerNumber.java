@@ -1,16 +1,16 @@
 package baseball.model;
 
-import java.util.ArrayList;
+import java.util.List;
 
 public class PlayerNumber {
 
-	private final ArrayList<Integer> playerNumber;
+	private final List<Integer> playerNumber;
 
-	public PlayerNumber(ArrayList<Integer> playerNumber) {
+	public PlayerNumber(List<Integer> playerNumber) {
 		this.playerNumber = playerNumber;
 	}
 
-	public ArrayList<Integer> getPlayerNumber() {
+	public List<Integer> getPlayerNumber() {
 		return playerNumber;
 	}
 }
