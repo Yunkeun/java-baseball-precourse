@@ -1,8 +1,4 @@
-package baseball.model.number.service;
-
-import baseball.model.hint.service.HintService;
-import baseball.model.number.PlayerNumber;
-import baseball.model.number.RandomNumber;
+package baseball.model;
 
 public class NumberServiceImpl implements NumberService {
 

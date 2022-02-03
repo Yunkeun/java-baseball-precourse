@@ -1,12 +1,12 @@
 package baseball.controller;
 
-import baseball.model.hint.service.HintService;
-import baseball.model.hint.service.HintServiceImpl;
-import baseball.model.number.utils.Factory;
-import baseball.model.number.service.NumberService;
-import baseball.model.number.service.NumberServiceImpl;
-import baseball.model.number.PlayerNumber;
-import baseball.model.number.RandomNumber;
+import baseball.model.HintService;
+import baseball.model.HintServiceImpl;
+import baseball.utils.NumberFactory;
+import baseball.model.NumberService;
+import baseball.model.NumberServiceImpl;
+import baseball.model.PlayerNumber;
+import baseball.model.RandomNumber;
 import baseball.view.InputView;
 import baseball.view.OutputView;
 
@@ -16,7 +16,7 @@ public class GameController {
 	private PlayerNumber playerNumber;
 
 	public void controlGame() {
-		randomNumber = Factory.createRandomNumber();
+		randomNumber = NumberFactory.createRandomNumber();
 		do {
 			play();
 		} while (!validateFinish());
@@ -24,7 +24,7 @@ public class GameController {
 
 	private void play() {
 		OutputView.askPlayerNumber();
-		playerNumber = Factory.createPlayerNumber();
+		playerNumber = NumberFactory.createPlayerNumber();
 	}
 
 	private boolean validateFinish() {

@@ -1,21 +1,21 @@
-package baseball.model.number.utils;
+package baseball.utils;
 
-import baseball.model.number.PlayerNumber;
-import baseball.model.number.RandomNumber;
+import baseball.model.PlayerNumber;
+import baseball.model.RandomNumber;
 import baseball.view.InputView;
 import baseball.view.OutputView;
 import camp.nextstep.edu.missionutils.Randoms;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Factory {
+public class NumberFactory {
 
 	private static ArrayList<Integer> numbers;
 	private static final int MINIMUM_RANGE = 1;
 	private static final int MAXIMUM_RANGE = 9;
 	private static final int NUMBERS_SIZE = 3;
 
-	private Factory() {
+	private NumberFactory() {
 	}
 
 	public static PlayerNumber createPlayerNumber() {

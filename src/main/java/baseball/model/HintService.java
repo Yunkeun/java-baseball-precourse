@@ -1,4 +1,4 @@
-package baseball.model.hint.service;
+package baseball.model;
 
 public interface HintService {
 
