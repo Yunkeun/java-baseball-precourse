@@ -40,6 +40,6 @@ public class GameController {
 	private boolean askRetry() {
 		OutputView.printFinish();
 		OutputView.printRetry();
-		return InputView.inputRetry() == InputView.RESTART;
+		return InputView.inputRetry();
 	}
 }

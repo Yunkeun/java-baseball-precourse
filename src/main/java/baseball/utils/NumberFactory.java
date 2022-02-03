@@ -2,14 +2,13 @@ package baseball.utils;
 
 import baseball.model.Numbers;
 import baseball.view.InputView;
-import baseball.view.OutputView;
 import camp.nextstep.edu.missionutils.Randoms;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.LinkedList;
+import java.util.Set;
 
 public class NumberFactory {
 
-	private static List<Integer> numbers;
 	private static final int MINIMUM_RANGE = 1;
 	private static final int MAXIMUM_RANGE = 9;
 	private static final int NUMBERS_SIZE = 3;
@@ -18,29 +17,20 @@ public class NumberFactory {
 	}
 
 	public static Numbers createPlayerNumber() {
-		numbers = new ArrayList<>();
-		List<String> inputNumbers = InputView.inputPlayerNumber();
-		if (inputNumbers.size() != NUMBERS_SIZE) {
-			OutputView.printException();
-		}
-		for (String number : inputNumbers) {
-			numbers.add(Integer.parseInt(number));
-		}
-		return new Numbers(numbers);
+		return InputView.inputPlayerNumber();
 	}
 
 	public static Numbers createRandomNumber() {
-		numbers = new ArrayList<>();
+		// 중복 허용 X -> Set 사용하기
+		final Set<Integer> numbers = new HashSet<>();
 		while (numbers.size() != NUMBERS_SIZE) {
-			int pickedNumber = pickNumber();
-			if (!numbers.contains(pickedNumber)) {
-				numbers.add(pickedNumber);
-			}
+			numbers.add(pickRandomNumber());
 		}
-		return new Numbers(numbers);
+		return new Numbers(new LinkedList<>(numbers));
 	}
 
-	private static int pickNumber() {
+	// pickNumber 보다 더 구체적인 네이밍 pickNumber -> pickRandomNumber
+	private static int pickRandomNumber() {
 		return Randoms.pickNumberInRange(MINIMUM_RANGE, MAXIMUM_RANGE);
 	}
 }
