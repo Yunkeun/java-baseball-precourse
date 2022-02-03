@@ -1,6 +1,7 @@
 package baseball.view;
 
 import baseball.model.HintType;
+import baseball.view.printstrategy.PrintStrategy;
 
 public class OutputView {
 
@@ -27,7 +28,7 @@ public class OutputView {
 		System.out.println(ASK_RETRY);
 	}
 
-	public static void printHint(int countBall, int countStrike) {
+	public static void printHint(int countBall, int countStrike, PrintStrategy printStrategy) {
 		if (countBall == 0 & countStrike == 0) {
 			System.out.println(HintType.Nothing);
 			return;
@@ -40,6 +41,7 @@ public class OutputView {
 			System.out.println(countBall + HintType.Ball.name());
 			return;
 		}
-		System.out.println(countBall + HintType.Ball.name() + " " + countStrike + HintType.Strike.name());
+		System.out.println(countBall + printStrategy.getHintType(HintType.Ball) + " "
+			+ countStrike + printStrategy.getHintType(HintType.Strike));
 	}
 }
