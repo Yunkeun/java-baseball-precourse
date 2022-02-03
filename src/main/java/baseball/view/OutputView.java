@@ -29,18 +29,17 @@ public class OutputView {
 
 	public static void printHint(int countBall, int countStrike) {
 		if (countBall == 0 & countStrike == 0) {
-			System.out.println(HintType.낫싱);
+			System.out.println(HintType.Nothing);
 			return;
 		}
 		if (countBall == 0) {
-			System.out.println(Integer.toString(countStrike) + HintType.스트라이크);
+			System.out.println(countStrike + HintType.Strike.name());
 			return;
 		}
 		if (countStrike == 0) {
-			System.out.println(Integer.toString(countBall) + HintType.볼);
+			System.out.println(countBall + HintType.Ball.name());
 			return;
 		}
-		System.out.println(
-			Integer.toString(countBall) + HintType.볼 + " " + countStrike + HintType.스트라이크);
+		System.out.println(countBall + HintType.Ball.name() + " " + countStrike + HintType.Strike.name());
 	}
 }

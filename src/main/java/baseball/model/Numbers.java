@@ -1,10 +1,13 @@
 package baseball.model;
 
+import baseball.view.OutputView;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Objects;
 
 public class Numbers {
 
+	public static final int SIZE = 3;
 	private final List<Integer> numbers;
 
 	public Numbers(List<Integer> numbers) {
@@ -13,6 +16,15 @@ public class Numbers {
 
 	public List<Integer> getNumbers() {
 		return numbers;
+	}
+
+	private void validate(List<Integer> numbers) {
+		if (numbers.size() != SIZE) {
+			OutputView.printException();
+		}
+		if (numbers.size() != new HashSet(numbers).size()) {
+			OutputView.printException();
+		}
 	}
 
 	// equals override 하여 같은 객체라면 return true
@@ -31,12 +43,5 @@ public class Numbers {
 	@Override
 	public int hashCode() {
 		return Objects.hash(numbers);
-	}
-
-	@Override
-	public String toString() {
-		return "Numbers{" +
-			"numbers=" + numbers +
-			'}';
 	}
 }

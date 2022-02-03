@@ -11,7 +11,6 @@ public class NumberFactory {
 
 	private static final int MINIMUM_RANGE = 1;
 	private static final int MAXIMUM_RANGE = 9;
-	private static final int NUMBERS_SIZE = 3;
 
 	private NumberFactory() {
 	}
@@ -23,7 +22,7 @@ public class NumberFactory {
 	public static Numbers createRandomNumber() {
 		// 중복 허용 X -> Set 사용하기
 		final Set<Integer> numbers = new HashSet<>();
-		while (numbers.size() != NUMBERS_SIZE) {
+		while (numbers.size() != Numbers.SIZE) {
 			numbers.add(pickRandomNumber());
 		}
 		return new Numbers(new LinkedList<>(numbers));

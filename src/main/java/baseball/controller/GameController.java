@@ -25,7 +25,6 @@ public class GameController {
 	}
 
 	private void playGame(Numbers answerNumber) {
-		System.out.println(answerNumber.toString());
 		while (true) {
 			OutputView.askPlayerNumber();
 			final Numbers playerNumber = NumberFactory.createPlayerNumber();
