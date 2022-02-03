@@ -2,18 +2,17 @@ package baseball.controller;
 
 import baseball.model.HintService;
 import baseball.model.HintServiceImpl;
+import baseball.model.Numbers;
 import baseball.utils.NumberFactory;
 import baseball.model.NumberService;
 import baseball.model.NumberServiceImpl;
-import baseball.model.PlayerNumber;
-import baseball.model.RandomNumber;
 import baseball.view.InputView;
 import baseball.view.OutputView;
 
 public class GameController {
 
-	private RandomNumber randomNumber;
-	private PlayerNumber playerNumber;
+	private Numbers randomNumber;
+	private Numbers playerNumber;
 
 	public void controlGame() {
 		randomNumber = NumberFactory.createRandomNumber();

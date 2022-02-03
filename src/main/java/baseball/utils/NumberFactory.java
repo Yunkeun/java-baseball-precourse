@@ -1,7 +1,6 @@
 package baseball.utils;
 
-import baseball.model.PlayerNumber;
-import baseball.model.RandomNumber;
+import baseball.model.Numbers;
 import baseball.view.InputView;
 import baseball.view.OutputView;
 import camp.nextstep.edu.missionutils.Randoms;
@@ -18,7 +17,7 @@ public class NumberFactory {
 	private NumberFactory() {
 	}
 
-	public static PlayerNumber createPlayerNumber() {
+	public static Numbers createPlayerNumber() {
 		numbers = new ArrayList<>();
 		List<String> inputNumbers = InputView.inputPlayerNumber();
 		if (inputNumbers.size() != NUMBERS_SIZE) {
@@ -27,10 +26,10 @@ public class NumberFactory {
 		for (String number : inputNumbers) {
 			numbers.add(Integer.parseInt(number));
 		}
-		return new PlayerNumber(numbers);
+		return new Numbers(numbers);
 	}
 
-	public static RandomNumber createRandomNumber() {
+	public static Numbers createRandomNumber() {
 		numbers = new ArrayList<>();
 		while (numbers.size() != NUMBERS_SIZE) {
 			int pickedNumber = pickNumber();
@@ -38,7 +37,7 @@ public class NumberFactory {
 				numbers.add(pickedNumber);
 			}
 		}
-		return new RandomNumber(numbers);
+		return new Numbers(numbers);
 	}
 
 	private static int pickNumber() {

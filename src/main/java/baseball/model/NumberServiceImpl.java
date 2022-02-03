@@ -9,8 +9,8 @@ public class NumberServiceImpl implements NumberService {
 	}
 
 	@Override
-	public boolean compareNumbers(PlayerNumber playerNumber, RandomNumber randomNumber) {
+	public boolean compareNumbers(Numbers playerNumber, Numbers randomNumber) {
 		hintService.giveHint();
-		return playerNumber.getPlayerNumber().equals(randomNumber.getRandomNumber());
+		return playerNumber.getNumbers().equals(randomNumber.getNumbers());
 	}
 }
