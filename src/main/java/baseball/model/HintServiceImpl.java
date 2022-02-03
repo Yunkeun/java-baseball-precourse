@@ -4,31 +4,22 @@ import baseball.view.OutputView;
 
 public class HintServiceImpl implements HintService {
 
-	private final Numbers playerNumber;
-	private final Numbers randomNumber;
-
-	public HintServiceImpl(Numbers playerNumber, Numbers randomNumber) {
-		this.playerNumber = playerNumber;
-		this.randomNumber = randomNumber;
-	}
-
 	@Override
-	public void giveHint() {
-		OutputView.printHint(countBall(), countStrike());
+	public void giveHint(Numbers playerNumber, Numbers randomNumber) {
+		OutputView.printHint(countBall(playerNumber, randomNumber), countStrike(playerNumber, randomNumber));
 	}
 
-	// 구현 클래스에서 기능적인 메소드가 있어도 될까?
-	private int countBall() {
+	private int countBall(Numbers playerNumber, Numbers randomNumber) {
 		int count = 0;
 		for (int number : playerNumber.getNumbers()) {
 			if (randomNumber.getNumbers().contains(number)) {
 				count++;
 			}
 		}
-		return count - countStrike();
+		return count - countStrike(playerNumber, randomNumber);
 	}
 
-	private int countStrike() {
+	private int countStrike(Numbers playerNumber, Numbers randomNumber) {
 		int count = 0;
 		int index = 0;
 		for (int number : playerNumber.getNumbers()) {

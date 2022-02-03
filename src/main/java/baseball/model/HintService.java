@@ -2,5 +2,5 @@ package baseball.model;
 
 public interface HintService {
 
-	void giveHint();
+	void giveHint(Numbers playerNumber, Numbers randomNumber);
 }
