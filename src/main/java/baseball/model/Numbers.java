@@ -11,6 +11,7 @@ public class Numbers {
 	private final List<Integer> numbers;
 
 	public Numbers(List<Integer> numbers) {
+		validate(numbers);
 		this.numbers = numbers;
 	}
 
